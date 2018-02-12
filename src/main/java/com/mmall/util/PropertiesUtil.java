@@ -17,11 +17,14 @@ public class PropertiesUtil {
 
     private static Properties props;
 
+    //静态块：执行顺序优于普通代码块、构造代码块，只在类加载的时候执行，并且只执行一次
+    //类似于 class.forName("com.mysql.jdbc.Driver") 的原理
     static {
         String fileName = "mmall.properties";
         props = new Properties();
         try {
-            props.load(new InputStreamReader(PropertiesUtil.class.getClassLoader().getResourceAsStream(fileName),"UTF-8"));
+            props.load(new InputStreamReader(
+                    PropertiesUtil.class.getClassLoader().getResourceAsStream(fileName),"UTF-8"));
         } catch (IOException e) {
             logger.error("配置文件读取异常",e);
         }

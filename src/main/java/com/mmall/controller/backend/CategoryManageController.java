@@ -100,7 +100,7 @@ public class CategoryManageController {
         //校验是否是管理员
         if (iUserService.checkAdminRole(user).isSuccess()){
             //查询当前节点的id和递归子节点的id
-            return iCategoryService.selectCategoryAndChildrenbyId(categoryId);
+            return iCategoryService.selectCategoryAndChildrenById(categoryId);
         }else {
             return ServerResponse.createByErrorMessage("无权限操作，需要管理员权限");
         }
