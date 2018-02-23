@@ -202,7 +202,7 @@
     </dependency>
 
 
-    <!-- alipay -->
+    <!-- alipay依赖包 -->
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
