@@ -35,4 +35,9 @@ public interface CartMapper {
 
     int selectCartProductCount(Integer userId);
 
+    //订单接口使用
+    List<Cart> selectCheckedCartByUserId(Integer userId);
+
+
+
 }
